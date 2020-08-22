@@ -1,0 +1,16 @@
+version: "3"
+services:
+  # service_name をプロジェクト名に変更するとわかりやすくなる
+  service_name:
+    build: .
+    working_dir: /app/project_name
+    command: yarn serve
+    # カレントディレクトリにある project_name で command: を実行する
+    ports:
+      - 1234:8080
+    volumes:
+      # カレントディレクトリに他の project がある場合はそれらもマウントされる
+      - ./:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true

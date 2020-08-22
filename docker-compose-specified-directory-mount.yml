@@ -1,0 +1,14 @@
+version: "3"
+services:
+  # service_name をプロジェクト名に変更するとわかりやすくなる
+  service_name:
+    build: .
+    command: yarn serve
+    ports:
+      - 1234:8080
+    volumes:
+      # project_name に 作成したプロジェクト名を指定する
+      - ./project_name:/app
+      - /node_modules
+    stdin_open: true
+    tty: true
