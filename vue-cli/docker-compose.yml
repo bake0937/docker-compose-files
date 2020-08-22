@@ -1,0 +1,13 @@
+version: "3"
+services:
+  my-cli:
+    build: .
+    working_dir: /app/my-cli
+    command: yarn serve
+    ports:
+      - 1234:8080
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
