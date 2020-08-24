@@ -4,6 +4,7 @@ services:
   service_name:
     build: .
     working_dir: /app/project_name
+    # 「docker-compose up」を実行した時に実行したいコマンドを入れる
     command: yarn serve
     # カレントディレクトリにある project_name で command: を実行する
     ports:
@@ -11,6 +12,5 @@ services:
     volumes:
       # カレントディレクトリに他の project がある場合はそれらもマウントされる
       - ./:/app
-      - /app/node_modules
     stdin_open: true
     tty: true

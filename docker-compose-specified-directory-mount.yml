@@ -3,12 +3,12 @@ services:
   # service_name をプロジェクト名に変更するとわかりやすくなる
   service_name:
     build: .
-    command: yarn serve
+    # 「docker-compose up」を実行した時に実行したいコマンドを入れる
+    command:
     ports:
       - 1234:8080
     volumes:
       # project_name に 作成したプロジェクト名を指定する
       - ./project_name:/app
-      - /node_modules
     stdin_open: true
     tty: true
