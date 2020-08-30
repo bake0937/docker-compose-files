@@ -1,3 +1,4 @@
+# 「docker-compose run --rm --service-ports my-cli vue create .」でプロジェクトを作成
 version: "3"
 services:
   my-cli:
@@ -9,5 +10,10 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
+      # 「docker-compose run app yarn cache dir」で表示されたcacheディレクトリを指定する
+      - yarn-cache:/usr/local/share/.cache/yarn/v番号
     stdin_open: true
     tty: true
+
+volumes:
+  yarn-cache:
