@@ -1,0 +1,8 @@
+version: "3"
+services:
+  elixir:
+    working_dir: /myapp
+    volumes:
+      - .:/myapp
+    build: .
+    command: elixir --version
