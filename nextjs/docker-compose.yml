@@ -1,0 +1,11 @@
+version: "3"
+services:
+  nextjs:
+    build: ./docker/
+    working_dir: /usr/src/app/プロジェクト名
+    container_name: nextjs
+    volumes:
+      - ./app:/usr/src/app/
+    command: "yarn dev"
+    ports:
+      - "4001:3000"
