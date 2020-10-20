@@ -1,0 +1,13 @@
+version: "3"
+services:
+  react:
+    build: ./docker/
+    working_dir: /usr/src/app/プロジェクト名
+    container_name: react
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/usr/src/app/
+    command: "yarn start"
+    ports:
+     - "6001:3000"
