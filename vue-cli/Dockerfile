@@ -1,9 +1,8 @@
-FROM node:12.18.3-alpine
+FROM node:14.15.0-alpine3.12
 
 WORKDIR /app
 
 RUN apk update && \
-  npm install -g npm && \
-  npm install -g @vue/cli
+  yarn global add @vue/cli
 
 CMD ["/bin/ash"]
