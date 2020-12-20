@@ -1,0 +1,16 @@
+version: '3'
+services:
+  bolt:
+    build: .
+    tty: true
+    env_file:
+      - ./.env
+    volumes:
+      - ./:/myapp
+      - node_modules:/myapp/node_modules
+    working_dir: /myapp
+    command: node app.js
+    ports:
+      - 3000:3000
+volumes:
+  node_modules:
