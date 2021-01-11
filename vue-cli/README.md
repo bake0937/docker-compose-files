@@ -17,7 +17,28 @@ $ docker-compose run --rm --service-ports service名 vue create .
 ++  // ],
 ```
 
-5. コンテナーを起動する
+もしくは，`package.json`や`.eslintignore`等のファイルを手がかりに workingDirectories となるディレクトリを自動で設定されるようにする
+
+```diff
+{
+++  "eslint.workingDirectories": [{ "mode": "auto" }]
+}
+```
+
+5. `.eslintrc.js`で`eslint-plugin-vue`が機能するようにする
+
+```diff
+  extends: [
+    'plugin:vue/essential',
+++  'plugin:vue/recommended',
+    'eslint:recommended',
+    '@vue/typescript/recommended',
+    '@vue/prettier',
+    '@vue/prettier/@typescript-eslint',
+  ],
+```
+
+6. コンテナーを起動する
 ```bash
 $ docker-compose up
 ```
