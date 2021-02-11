@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc -p . && node .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf html/js/dist",
+    "tsc": "tsc",
+    "build": "npm-run-all clean tsc"
+  },
+  "dependencies": {
+    "@types/node": "^14.14.25",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.1",
+    "npm-run-all": "^3.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
+}
