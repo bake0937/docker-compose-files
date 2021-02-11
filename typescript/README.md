@@ -1,6 +1,8 @@
 # パッケージのインストール
 ```bash
-docker-compose run --rm node yarn install
+# yarn.lockを一度消さないとnode_modulesがローカルに入らないため削除しておく
+$rm ./src yarn.lock
+$docker-compose run --rm node yarn install
 ```
 
 # 初期化
@@ -16,5 +18,5 @@ $docker-compose run --rm node yarn run build
 
 # nginx 起動
 ```bash
-$ docker-compose up
+$docker-compose up
 ```
